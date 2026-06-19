@@ -1,5 +1,4 @@
 import 'package:fitbody_app/src/const/router/App_routers.dart';
-import 'package:fitbody_app/src/features/SetUp/screen/setupscreens1.dart';
 import 'package:fitbody_app/src/features/auth/cubit/AuthCubit.dart';
 import 'package:fitbody_app/src/features/auth/cubit/AuthState.dart';
 import 'package:flutter/material.dart';
@@ -144,7 +143,6 @@ return BlocListener<AuthCubit, AuthState>(
         text: "Sign Up",
         isLoading: state.isLoading,
         onPressed: () {
-       
       if (!formKey.currentState!.validate()) return;
       
       if (passwordController.text != confirmController.text) {

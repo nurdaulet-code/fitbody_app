@@ -13,7 +13,11 @@ class _HomescrensState extends State<Homescrens> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.black,
-      body: Text('Home'),
+      body: Column(
+        children: [
+          Text('Hi, Madison',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: AppColors.purple),)
+        ],
+      ),
     );
   }
 }
