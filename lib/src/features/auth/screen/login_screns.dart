@@ -186,7 +186,7 @@ class _LoginScrensState extends State<LoginScrens> {
                               child:  Text(
                                 "Forgot password?",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: AppColors.white,
                                 ),
                               ),
                             ),
@@ -215,7 +215,11 @@ class _LoginScrensState extends State<LoginScrens> {
 
                      SizedBox(height: 20),
 
-                     IconsWidgets(),
+                     IconsWidgets(
+                      onGoogleTap: () {
+                         context.read<AuthCubit>().signInWithGoogle();
+                      },
+                     ),
 
                      SizedBox(height: 30),
 

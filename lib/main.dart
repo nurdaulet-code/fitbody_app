@@ -4,7 +4,6 @@ import 'package:fitbody_app/src/features/auth/cubit/AuthCubit.dart';
 import 'package:fitbody_app/src/features/auth/service/AuthService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:fitbody_app/firebase_options.dart';
 import 'package:fitbody_app/src/const/router/app_routers.dart';
 
@@ -14,6 +13,7 @@ Future<void> main() async {
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+    
   );
 
   runApp( MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>(
-          create: (_) => AuthCubit(AuthService()),
+          create: (_) => AuthCubit(AuthService.instance),
         ),
         BlocProvider<Setupcubit>(
           create: (_) => Setupcubit(),

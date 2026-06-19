@@ -103,7 +103,7 @@ class _ForgetpaswordScreensState extends State<ForgetpaswordScreens> {
                   setState(() => isLoading = true);
 
                   try {
-                    await AuthService().forgotPassword(
+                    await AuthService.instance.forgotPassword(
                       emailController.text.trim(),
                     );
 

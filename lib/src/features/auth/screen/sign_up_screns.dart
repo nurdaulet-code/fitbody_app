@@ -1,9 +1,9 @@
 import 'package:fitbody_app/src/const/router/App_routers.dart';
+import 'package:fitbody_app/src/features/SetUp/screen/setupscreens1.dart';
 import 'package:fitbody_app/src/features/auth/cubit/AuthCubit.dart';
 import 'package:fitbody_app/src/features/auth/cubit/AuthState.dart';
 import 'package:flutter/material.dart';
 import 'package:fitbody_app/src/const/colors/AppColors.dart';
-import 'package:fitbody_app/src/features/auth/service/AuthService.dart';
 import 'package:fitbody_app/src/features/auth/widgets/CustomAuthButtomWidget.dart';
 import 'package:fitbody_app/src/features/auth/widgets/CustomTextFiledWidgets.dart';
 import 'package:fitbody_app/src/features/auth/widgets/IconsWidgets.dart';
@@ -144,6 +144,7 @@ return BlocListener<AuthCubit, AuthState>(
         text: "Sign Up",
         isLoading: state.isLoading,
         onPressed: () {
+       
       if (!formKey.currentState!.validate()) return;
       
       if (passwordController.text != confirmController.text) {
@@ -162,7 +163,11 @@ return BlocListener<AuthCubit, AuthState>(
       ),
                  SizedBox(height: 20),
       
-                IconsWidgets(),
+                IconsWidgets(
+                  onGoogleTap: () {
+                       context.read<AuthCubit>().signInWithGoogle();
+                  },
+                ),
       
                  SizedBox(height: 20),
       
